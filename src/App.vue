@@ -134,7 +134,8 @@ export default {
 }
 
 .container {
-  min-height: 100vh;
+  height: 100vh;
+  overflow: auto;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -161,7 +162,7 @@ export default {
       backdrop-filter: blur(10px);
       transition: 0.4s ease-in;
 
-      &::focus {
+      &:focus {
         background-color: rgba(255, 255, 255, 0.7);
         box-shadow: 0 5px 10px rgb(0 0 0 / 12%);
       }
