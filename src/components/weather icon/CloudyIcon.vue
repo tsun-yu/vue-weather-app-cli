@@ -15,7 +15,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 svg {
   width: 100%;
   height: 100%;
@@ -39,26 +39,28 @@ svg {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
     fill: #ccc;
     transition: 0.5s;
-  }
-}
 
-.cloud:before,
-.cloud:after {
-  content: "";
-  background-color: #f3f3f3;
-  display: block;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  position: absolute;
-}
-.cloud:before {
-  left: 16px;
-  top: -28px;
-}
-.cloud:after {
-  left: 35px;
-  top: -20px;
+    &::before,
+    &::after {
+      content: "";
+      background-color: #f3f3f3;
+      display: block;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      position: absolute;
+    }
+
+    &::before {
+      left: 16px;
+      top: -28px;
+    }
+
+    &::after {
+      left: 35px;
+      top: -20px;
+    }
+  }
 }
 
 @keyframes clouddrift {
@@ -71,7 +73,5 @@ svg {
   100% {
     transform: translateY(0px);
   }
-}
-svg .cloud {
 }
 </style>

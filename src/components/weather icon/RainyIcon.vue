@@ -13,21 +13,59 @@
   </svg>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 svg {
   width: 100%;
   height: 100%;
   position: relative;
+
+  .rain {
+    width: 2px;
+    height: 10px;
+    position: absolute;
+    left: 45px;
+    bottom: 15px;
+    animation: raindrop 2s infinite linear;
+    background-color: #f3f3f3;
+    stroke: #4dacff;
+  }
+
+  .cloud {
+    width: 100px;
+    height: 36px;
+    position: absolute;
+    left: 200px;
+    bottom: 50px;
+    border-radius: 20px;
+    animation: clouddrift 4s infinite;
+    background-color: #f3f3f3;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    fill: #ccc;
+    transition: 0.5s;
+
+    &::before,
+    &::after {
+      content: "";
+      background-color: #f3f3f3;
+      display: block;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      position: absolute;
+    }
+
+    &::before {
+      left: 16px;
+      top: -28px;
+    }
+
+    &::after {
+      left: 35px;
+      top: -20px;
+    }
+  }
 }
-.rain {
-  width: 2px;
-  height: 10px;
-  position: absolute;
-  left: 45px;
-  bottom: 15px;
-  animation: raindrop 2s infinite linear;
-  background-color: #f3f3f3;
-}
+
 @keyframes raindrop {
   0% {
     transform: translateY(0px);
@@ -36,50 +74,6 @@ svg {
     transform: translateY(50px);
     opacity: 0;
   }
-}
-svg .rain {
-  /* stroke: #fff; */
-  stroke: #4dacff;
-}
-.cloud {
-  width: 100px;
-  height: 36px;
-  position: absolute;
-  left: 200px;
-  bottom: 50px;
-  border-radius: 20px;
-  animation: clouddrift 4s infinite;
-  background-color: #f3f3f3;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-}
-.cloud {
-  width: 100px;
-  height: 36px;
-  position: absolute;
-  left: 200px;
-  bottom: 50px;
-  border-radius: 20px;
-  animation: clouddrift 4s infinite;
-  background-color: #f3f3f3;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-}
-.cloud:before,
-.cloud:after {
-  content: "";
-  background-color: #f3f3f3;
-  display: block;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  position: absolute;
-}
-.cloud:before {
-  left: 16px;
-  top: -28px;
-}
-.cloud:after {
-  left: 35px;
-  top: -20px;
 }
 
 @keyframes clouddrift {
@@ -92,9 +86,5 @@ svg .rain {
   100% {
     transform: translateY(0px);
   }
-}
-svg .cloud {
-  fill: #ccc;
-  transition: 0.5s;
 }
 </style>
