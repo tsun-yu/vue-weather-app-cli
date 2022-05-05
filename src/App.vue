@@ -79,6 +79,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 :root {
   --color-primary: #def4fe;
 }
@@ -86,6 +87,7 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -134,8 +136,10 @@ export default {
 }
 
 @media (max-width: 540px) {
-  .weatherWrap {
-    width: 100%;
+  .container {
+    .weatherWrap {
+      width: 100%;
+    }
   }
 }
 </style>
