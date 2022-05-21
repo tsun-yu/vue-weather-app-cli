@@ -87,7 +87,7 @@ export default {
   }
 
   .icon {
-    width: 100px;
+    width: 110px;
     height: 100%;
     font-size: 2rem;
     color: #000;
@@ -144,6 +144,7 @@ export default {
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
+      margin-right: 0;
 
       div {
         display: flex;
