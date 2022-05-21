@@ -33,9 +33,10 @@ export default {
     const container = ref(null);
 
     const getData = async () => {
+      console.log(query.value.trim().length);
       try {
         const response = await fetch(
-          `${base_url}weather?q=${query.value}&units=metric&APPID=${api_key}`
+          `${base_url}weather?q=${query.value.trim()}&units=metric&APPID=${api_key}`
         );
         if (!response.ok) {
           console.log(response.status);
